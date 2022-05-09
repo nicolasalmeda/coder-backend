@@ -1,0 +1,19 @@
+{
+  "name": "ejemploexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entrega3.js",
+  "scripts": {
+    "start": "node entrega4.js",
+    "start:dev": "nodemon entrega4.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
