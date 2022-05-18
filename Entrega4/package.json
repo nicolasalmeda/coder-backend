@@ -2,7 +2,7 @@
   "name": "ejemploexpress",
   "version": "1.0.0",
   "description": "",
-  "main": "entrega3.js",
+  "main": "entrega4.js",
   "scripts": {
     "start": "node entrega4.js",
     "start:dev": "nodemon entrega4.js"
