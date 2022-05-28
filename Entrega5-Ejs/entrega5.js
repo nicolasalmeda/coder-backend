@@ -17,7 +17,7 @@ app.use(webRouter);
 
 app.use(routerApiProductos);
 
-const PORT = 3005;
+// const PORT = 3005;
 const server = app.listen(PORT, () => {
   console.log(`Escuchando en el puerto ${server.address().port}`);
 });
