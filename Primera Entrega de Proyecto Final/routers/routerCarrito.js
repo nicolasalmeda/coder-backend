@@ -15,8 +15,8 @@ routerCarrito.post(
   controladoresCarrito.agregarProductoACarrito
 );
 routerCarrito.get(
-  "/api/carritos/productos",
-  controladoresCarrito.getAllCarrito
+  "/api/carritos/:id_carrito",
+  controladoresCarrito.getCarritoProducts
 );
 routerCarrito.delete(
   "/api/carritos/:id_carrito/productos/:id_prod",

@@ -18,28 +18,40 @@ const carrito = [
 ];
 
 const dataBaseCarrito = {
-  create() {
-    const newCarrito = {
-      ...carrito,
-    };
+  create: () => {
+    const newCarrito = { id: carrito.length + 1, products: [] };
+    carrito.push(newCarrito);
     console.log("carrito creado");
     return newCarrito.id;
   },
-  agregarProductoaCarrito(num) {
-    let producto = productos.find((e) => e.id === num);
-
-    if (producto) {
-      const newProduct = producto;
-      carrito.products.push(newProduct);
-      console.log("Producto Agregado a Carrito");
-      return newProduct;
+  agregarProductoaCarrito(numC, numP) {
+    let producto = productos.find((e) => e.id === numP);
+    let carry = carry.findIndex((e) => e.id === numC);
+    if (carry === -1) {
+      const error = new Error("Producto no encontrado");
+      error.tipo = "db not found";
+      throw error;
     } else {
-      return console.log("Producto no encontrado");
+      if (producto) {
+        const newProduct = producto;
+        carrito.products.push(newProduct);
+        console.log("Producto Agregado a Carrito");
+        return newProduct;
+      } else {
+        return console.log("Producto no encontrado");
+      }
     }
   },
 
-  getAllCarrito() {
-    return carrito;
+  getCarritoProducts(num) {
+    const indiceCarrito = carrito.findIndex((p) => p.id === num);
+    if (indiceCarrito === -1) {
+      const error = new Error("Producto no encontrado");
+      error.tipo = "db not found";
+      throw error;
+    } else {
+      return carrito[indiceCarrito].products;
+    }
   },
   deleteByIdCarrito: (numC, numP) => {
     const indiceBorradoCarrito = carrito.findIndex((p) => p.id === numC);
